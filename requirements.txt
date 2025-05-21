@@ -1,0 +1,14 @@
+librosa==0.11.0
+numba==0.61.2
+numpy==2.2.5
+pandas==2.2.3
+pesq==0.0.4
+PyYAML==6.0.2
+soundfile==0.13.1
+sru==2.6.0
+torch==2.7.0
+torchaudio==2.7.0
+torchmetrics==1.7.1
+tqdm==4.67.1
+triton==3.3.0
+wandb==0.19.11
