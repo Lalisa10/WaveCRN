@@ -118,3 +118,12 @@ class WaveCRNLightning(pl.LightningModule):
     def configure_optimizers(self):
         optimizer = torch.optim.Adam(self.parameters(), lr=1e-3)
         return optimizer
+    
+if __name__ == "__main__":
+    from dataloader.datamodule import AudioDataModule
+    data_module = AudioDataModule("clean_audio/", "noisy_audio/", 1)
+    data_loader = data_module.train_dataloader()
+    noisy, clean = next(iter(data_loader))
+    wavecrn = WaveCRN()
+    denoised = wavecrn(noisy)
+    print(denoised.shape)

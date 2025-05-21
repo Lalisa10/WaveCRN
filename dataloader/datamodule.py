@@ -14,9 +14,8 @@ class AudioDataModule(pl.LightningDataModule):
         self.persistent_workers = True
         self.prefetch_factor = 2
 
-    def setup(self, stage=None):
         # Tạo dataset
-        full_dataset = CustomAudioDataset(self.clean_dir, self.noisy_dir, self.sample_rate, self.segment_length)
+        full_dataset = CustomAudioDataset(self.clean_dir, self.noisy_dir, self.sample_rate)
         
         # Chia dataset thành train/val/test
         train_size = int(0.7 * len(full_dataset))
